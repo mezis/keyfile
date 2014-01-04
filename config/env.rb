@@ -1,0 +1,4 @@
+require 'dotenv'
+
+Dotenv.load!
+
