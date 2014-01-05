@@ -9,7 +9,7 @@ module Keyfile
 
     set :database, ENV['DATABASE_URL']
 
-    get '/:pulse' do
+    get '/pulse' do
       Entry.count
       halt 200
     end
