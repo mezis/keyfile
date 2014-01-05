@@ -9,6 +9,11 @@ module Keyfile
 
     set :database, ENV['DATABASE_URL']
 
+    get '/:pulse' do
+      Entry.count
+      halt 200
+    end
+
     post '/:key' do
       Entry.transaction do
         Entry.where(key: params['key']).destroy_all
