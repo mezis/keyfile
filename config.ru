@@ -6,6 +6,9 @@ require 'keyfile/app'
 require 'keyfile/auth'
 require 'unicorn'
 require 'unicorn/oob_gc'
+require 'newrelic_rpm'
+
+NewRelic::Agent.after_fork(force_reconnect: true)
 
 use Keyfile::Auth
 use Dragonfly::Middleware
