@@ -6,6 +6,8 @@ gem 'dotenv'
 gem 'foreman'
 gem 'rainbows'
 
+gem 'newrelic_rpm'
+
 gem 'sinatra'
 gem 'activerecord'
 gem "sinatra-activerecord"
