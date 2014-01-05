@@ -55,7 +55,7 @@ You're all set!
 ## License
 
 Released under the MIT licence.
-Copyright (c) 2013 HouseTrip Ltd.
+Copyright (c) 2014 HouseTrip Ltd.
 
 
 ## Contributing
