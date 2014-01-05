@@ -4,7 +4,7 @@ Rainbows! do
   use :ThreadPool                        # concurrency model to use
   worker_connections        ENV['UNICORN_THREADS'].to_i
   keepalive_timeout         ENV['UNICORN_KEEPALIVE'].to_i # zero disables keepalives entirely
-  client_max_body_size      100_000_000    # 100 megabytes
+  client_max_body_size      250_000_000    # 250 megabytes
   keepalive_requests        5              # default:100
   client_header_buffer_size 2_000          # 2 kilobytes
 end
