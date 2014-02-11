@@ -38,6 +38,8 @@ worker_processes ENV['UNICORN_WORKERS'].to_i
 # we use a shorter backlog for quicker failover when busy
 # listen "/tmp/.sock", :backlog => 64
 # listen 8080, :tcp_nopush => true
+listen ENV['PORT'].to_i, tcp_nopush: false, tcp_nodelay: true
+
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout ENV['UNICORN_TIMEOUT'].to_i
