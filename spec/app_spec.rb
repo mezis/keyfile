@@ -23,8 +23,8 @@ describe Keyfile::App do
     it 'overwrites any existing entry' do
       old_id = Keyfile::Entry.create!(key: 'foo').id
       perform
-      Keyfile::Entry.count.should eq(1)
-      Keyfile::Entry.first.id.should_not eq(old_id)
+      expect(Keyfile::Entry.count).to eq(1)
+      expect(Keyfile::Entry.first.id).not_to eq(old_id)
     end
   end
 
@@ -35,7 +35,7 @@ describe Keyfile::App do
 
     it 'raises 404 for unknown entries' do
       perform
-      last_response.not_found?.should be_true
+      expect(last_response).to be_not_found
     end
 
     context 'when the entry exists' do
@@ -45,11 +45,11 @@ describe Keyfile::App do
 
       it 'redirects to the entry' do
         perform
-        last_response.should be_redirect
+        expect(last_response).to be_redirect
 
         entry_path = Keyfile::Entry.last.file.url
         response_path = URI.parse(last_response.location).path
-        response_path.should eq(entry_path)
+        expect(response_path).to eq(entry_path)
       end
 
       it 'bumps the entry timestamp' do

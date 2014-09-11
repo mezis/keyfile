@@ -4,6 +4,7 @@ require 'logger'
 
 Dragonfly.app.configure do
   url_format '/media/:job'
+  verify_urls false
   datastore Dragonfly::ActiveRecord::Store.new
 end
 
