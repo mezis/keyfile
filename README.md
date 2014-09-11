@@ -2,6 +2,8 @@
 
 A key-file store over HTTP, as a no-frills alternative to Amazon S3.
 
+![Build](https://api.travis-ci.org/mezis/keyfile.svg)
+
 Keyfile can be useful when all you have is [curl](http://curl.haxx.se/) on your
 command line and cannot use the heavier S3 client libraries.
 
