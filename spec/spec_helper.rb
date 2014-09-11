@@ -8,7 +8,7 @@ $:.unshift(dir) unless $:.include?(dir)
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 ENV['RACK_ENV'] = 'test'
-ENV['DATABASE_URL'] = 'sqlite3:///:memory:'
+ENV['DATABASE_URL'] = 'sqlite3::memory:'
 
 require 'keyfile/app'  # <-- your sinatra app
 require 'rspec'
@@ -16,9 +16,6 @@ require 'rack/test'
 require 'database_cleaner'
 
 RSpec.configure do |config|
-  config.treat_symbols_as_metadata_keys_with_true_values = true
-  config.run_all_when_everything_filtered = true
-  config.filter_run :focus
 
   # Run specs in random order to surface order dependencies. If you find an
   # order dependency and want to debug it, you can fix the order by providing
